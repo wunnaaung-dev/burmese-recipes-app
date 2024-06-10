@@ -1,3 +1,4 @@
+"use client";
 import { Card } from "antd";
 import Image from "next/image";
 import { useState } from "react";
@@ -10,7 +11,7 @@ interface RecipesCardProps {
   img: string;
   name: string;
   type?: string;
-  slug: string
+  slug: string;
 }
 
 const RecipesCard = ({ img, name, type, slug }: RecipesCardProps) => {
@@ -23,7 +24,7 @@ const RecipesCard = ({ img, name, type, slug }: RecipesCardProps) => {
   return (
     <Card
       hoverable
-      className="w-full md:w-64 p-2 max-h-max"
+      className="w-full md:w-64 p-2 max-h-[280px] md:max-h-[350px]"
       cover={
         <div
           style={{ position: "relative", width: "100%", paddingTop: "56.25%" }}
