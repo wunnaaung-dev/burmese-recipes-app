@@ -1,5 +1,5 @@
 # Burmese Recipes App
-![Home Page](/BRA_SS.png)
+![Home Page](/public/BRA_SS.png)
 
 ## Tech Stacks
 
