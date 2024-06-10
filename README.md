@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Burmese Recipes App
+![Home Page](/BRA_SS.png)
 
-## Getting Started
+## Tech Stacks
 
-First, run the development server:
+- Next JS (App Router)
+- Redux Toolkit and RTK Query
+- Ant Design & Tailwind
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### User Type
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> User can choose whether he or she is vegan or meat eater. Default is displaying all recipes. 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Search
+> User can search the desired recipes and look cooking instructions.
 
-## Learn More
+### Infinite Scroll
+> When user scroll and reach to the end of the page, it automatically refetch more data and show them to user.
 
-To learn more about Next.js, take a look at the following resources:
+## I learn these things from this project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Redux toolkit is used to write the global state management with mutation concepts which is not allowed in redux core.
+- RTK Query can be used to fetch and cach data in the store
+- With Redux, View and Data Layers can be separated. With redux, data can be managed through dispatch and actions within the data layers.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## My Application Flow
 
-## Deploy on Vercel
+- During the initial rendering process, `useFetchRecipesQuery` function, supported by RTK query is called to fetch all recipes data from the api.
+- The fetched recipes data is stored inside the redux store
+- We can make the side effects through actions. Dispatch funcitons are called to trigger these actions.
+- Each single recipe data can be get through `useFetchRecipeBySlugQuery(slug)` which is used to fetch dynamci recip data through URL params
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
+Special Thanks for Ko Sann Lynn Htun's for the project idea
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
