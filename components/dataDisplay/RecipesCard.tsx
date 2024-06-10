@@ -23,7 +23,7 @@ const RecipesCard = ({ img, name, type, slug }: RecipesCardProps) => {
   return (
     <Card
       hoverable
-      className="w-full md:w-64 p-2 max-h-fit"
+      className="w-full md:w-64 p-2 max-h-max"
       cover={
         <div
           style={{ position: "relative", width: "100%", paddingTop: "56.25%" }}

@@ -72,7 +72,7 @@ const Home = () => {
       {isFetching && <Loading />}
 
       {!isFetching && filteredRecipes.length === 0 && (
-        <p className="text-center text-gray-600 mt-4">No recipes found.</p>
+        <p className="text-center text-gray-600 mt-4 min-h-screen">No recipes found.</p>
       )}
 
       {filteredRecipes.length > 0 && (
