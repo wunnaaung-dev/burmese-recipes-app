@@ -30,7 +30,7 @@
 - During the initial rendering process, `useFetchRecipesQuery` function, supported by RTK query is called to fetch all recipes data from the api.
 - The fetched recipes data is stored inside the redux store
 - We can make the side effects through actions. Dispatch funcitons are called to trigger these actions.
-- Each single recipe data can be get through `useFetchRecipeBySlugQuery(slug)` which is used to fetch dynamci recip data through URL params
+- Each single recipe data can be get through `useFetchRecipeBySlugQuery(slug)` which is used to fetch dynamic recipe data through URL params
 
 ---
 Special Thanks for Ko Sann Lynn Htun's for the project idea
