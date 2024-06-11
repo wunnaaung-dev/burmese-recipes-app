@@ -79,6 +79,7 @@ const Home = () => {
       )}
 
       {filteredRecipes.length > 0 && <BurmeseRecipes data={filteredRecipes} />}
+      
     </main>
   );
 };

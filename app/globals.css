@@ -3,7 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+html {
+  scroll-behavior: smooth;
+}
 .card-container {
   @apply flex justify-center mt-4 min-h-screen;
 }

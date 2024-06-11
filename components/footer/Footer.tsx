@@ -4,6 +4,7 @@ import Heading from "../typography/Heading";
 const Footer = () => {
   return (
     <div className="bg-pink-300 md:relative w-full flex flex-col justify-center items-center mt-2 py-2">
+      <a href="#top">Scroll To Top</a>
       <Heading level={4} className="text-center text-wrap">
         Contribution to <i>Ko Sann Lynn Htun&apos;</i> Burma Project
         Idea
