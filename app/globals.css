@@ -1,16 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-.navbar {
-  @apply text-center font-extrabold text-xl bg-pink-600 text-orange-400 py-3 font-open-sans italic
-}
 
 .card-container {
-  @apply flex justify-center mt-4 min-h-screen
+  @apply flex justify-center mt-4 min-h-screen;
 }
 
 .card-display {
-  @apply grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-3 lg:grid-cols-4
+  @apply grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-3 lg:grid-cols-4;
 }
