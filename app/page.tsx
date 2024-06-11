@@ -1,13 +1,13 @@
-'use client';
+"use client";
 import React, { useEffect, useCallback } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState, AppDispatch } from '@/store/store';
+import { useDispatch, useSelector } from "react-redux";
+import { RootState, AppDispatch } from "@/store/store";
 import {
   setAllRecipes,
   setUserType,
   setItemsToShow,
   setSearchQuery,
-} from '@/features/recipesSlice';
+} from "@/features/recipesSlice";
 import { useFetchRecipesQuery } from "@/features/receipes-api-slice";
 import BurmeseRecipes from "@/components/dataDisplay/BurmeseRecipes";
 import SelectItems from "@/components/selectBox/SelectItems";
@@ -16,12 +16,9 @@ import SearchRecipes from "@/components/search/SearchRecipes";
 
 const Home = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const {
-    allRecipes,
-    userType,
-    itemsToShow,
-    searchQuery,
-  } = useSelector((state: RootState) => state.recipes);
+  const { allRecipes, userType, itemsToShow, searchQuery } = useSelector(
+    (state: RootState) => state.recipes
+  );
   const { data = [], isFetching, isError } = useFetchRecipesQuery();
 
   useEffect(() => {
@@ -30,11 +27,17 @@ const Home = () => {
     }
   }, [data, dispatch]);
 
-  const filteredRecipes = allRecipes.filter(recipe => {
-    if (userType !== "000" && recipe.UserType !== userType) return false;
-    if (searchQuery.trim() && !recipe.Name.toLowerCase().includes(searchQuery.trim().toLowerCase())) return false;
-    return true;
-  }).slice(0, itemsToShow);
+  const filteredRecipes = allRecipes
+    .filter((recipe) => {
+      if (userType !== "000" && recipe.UserType !== userType) return false;
+      if (
+        searchQuery.trim() &&
+        !recipe.Name.toLowerCase().includes(searchQuery.trim().toLowerCase())
+      )
+        return false;
+      return true;
+    })
+    .slice(0, itemsToShow);
 
   const handleSelectChange = (value: string) => {
     dispatch(setUserType(value));
@@ -62,22 +65,20 @@ const Home = () => {
 
   return (
     <main>
-      <div className="flex gap-12 justify-end items-center mb-4">
-        <div className="flex justify-center">
-          <SearchRecipes onSearch={handleSearch} />
-        </div>
+      <div className="container flex justify-end gap-4">
+        <SearchRecipes onSearch={handleSearch} />
         <SelectItems onChange={handleSelectChange} />
       </div>
 
       {isFetching && <Loading />}
 
       {!isFetching && filteredRecipes.length === 0 && (
-        <p className="text-center text-gray-600 mt-4 min-h-screen">No recipes found.</p>
+        <p className="text-center text-gray-600 mt-4 min-h-screen">
+          No recipes found.
+        </p>
       )}
 
-      {filteredRecipes.length > 0 && (
-        <BurmeseRecipes data={filteredRecipes} />
-      )}
+      {filteredRecipes.length > 0 && <BurmeseRecipes data={filteredRecipes} />}
     </main>
   );
 };
