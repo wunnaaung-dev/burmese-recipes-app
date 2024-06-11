@@ -14,12 +14,12 @@ interface SelectItemsProps {
 
 const SelectItems: React.FC<SelectItemsProps> = ({ onChange }) => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'flex-end', paddingRight: '20px' }}>
+    <div className='h-full'>
       <Space direction="vertical" className=" w-32 md:w-52">
         <Select
           defaultValue="000"
           onChange={onChange}
-          style={{ width: '100%' }}
+          style={{ width: '100%', height: "50px" }}
           options={options}
         />
       </Space>

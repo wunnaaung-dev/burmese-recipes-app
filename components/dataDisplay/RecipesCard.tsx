@@ -24,7 +24,7 @@ const RecipesCard = ({ img, name, type, slug }: RecipesCardProps) => {
   return (
     <Card
       hoverable
-      className="w-full md:w-64 p-2 max-h-[280px] md:max-h-[350px]"
+      className="w-full p-2 max-h-[280px] md:max-h-[350px]"
       cover={
         <div
           style={{ position: "relative", width: "100%", paddingTop: "56.25%" }}
@@ -44,7 +44,7 @@ const RecipesCard = ({ img, name, type, slug }: RecipesCardProps) => {
         description={type === "002" ? "သက်သက်လွတ်" : "အသားစား"}
       />
       <Link className="" href={`/instructions/${slug}`}>
-        <Btn className="bg-pink-500 w-full py-2 rounded-md mt-10 font-bold shadow-lg text-black">
+        <Btn className="bg-pink-500 w-full py-2 rounded-md mt-10 font-bold shadow-lg text-white">
           ချက်စားမယ်
         </Btn>
       </Link>
