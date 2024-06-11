@@ -1,13 +1,11 @@
-import Heading from "../typography/Heading"
+import Heading from "../typography/Heading";
 
 const Navbar = () => {
   return (
-    <nav>
-        <Heading className="navbar" color="#72F4B0">
-          Burmese Recipes App
-        </Heading>
+    <nav className="text-center font-extrabold text-3xl bg-pink-600 text-pink-50 py-5 font-open-sans ">
+      <p>Burmese Recipes App</p>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
