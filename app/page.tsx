@@ -65,7 +65,7 @@ const Home = () => {
 
   return (
     <main>
-      <div className="container flex justify-end gap-4">
+      <div className="container flex justify-end gap-4 mt-4">
         <SearchRecipes onSearch={handleSearch} />
         <SelectItems onChange={handleSelectChange} />
       </div>
