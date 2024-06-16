@@ -27,7 +27,7 @@ export default function RootLayout({
       <meta property="og:image" content="/site.png" />
       <meta property="og:site_name" content="Burmese Recipes App" />
       <meta name="author" content="Wunna Aung"></meta>
-      <body className={inter.className + " bg-slate-50"}>
+      <body className={inter.className + " bg-slate-50 flex flex-col min-h-screen"}>
         <ReduxProvider>
           <Navbar />
           <AntdRegistry>{children}</AntdRegistry>
