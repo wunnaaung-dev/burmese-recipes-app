@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 import { Recipe, useFetchRecipesQuery } from "@/features/receipes-api-slice";
 import Loading from "@/components/loading/Loading";
 import AlertBox from "@/components/alert/AlertBox";
+import { useAppDispatch } from "@/hooks/hooks";
+import { setSearchValue } from "@/features/search/searchSlice";
 
 const RecipeDetails = () => {
   const params = useParams();
@@ -19,8 +21,9 @@ const RecipeDetails = () => {
   const [alertMessage, setAlertMessage] = useState<string>("");
   const [alertDescription, setAlertDescription] = useState<string>("");
   const [showAlert, setShowAlert] = useState<boolean>(false);
-
+  const dispatch = useAppDispatch()
   useEffect(() => {
+    dispatch(setSearchValue(""))
     if (recipes && slug) {
       const foundRecipe = recipes.find((recipe) => recipe.Guid === slug);
       setRecipe(foundRecipe || null);
@@ -32,7 +35,7 @@ const RecipeDetails = () => {
         setIsSaved(savedRecipes.includes(foundRecipe.Guid));
       }
     }
-  }, [recipes, slug]);
+  }, [dispatch, recipes, slug]);
 
   const handleImageError = () => {
     setImageSrc("/img/default.jpg");
