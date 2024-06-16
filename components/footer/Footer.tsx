@@ -1,26 +1,19 @@
-import React from "react";
-import Heading from "../typography/Heading";
-
 const Footer = () => {
   return (
-    <div className="bg-pink-300 md:relative w-full flex flex-col justify-center items-center mt-2 py-2">
-      <a href="#top">Scroll To Top</a>
-      <Heading level={4} className="text-center text-wrap">
-        Contribution to <i>Ko Sann Lynn Htun&apos;</i> Burma Project
-        Idea
-      </Heading>
-
-      <p>Developed By Wunna Aung</p>
-      <small>
-        Contact me from{" "}
-        <a
-          className=" underline text-blue-700 font-semibold"
-          href="https://www.linkedin.com/in/wunna-aung-256116227/"
-        >
-          Linked In
-        </a>
-      </small>
-    </div>
+    <footer className="bg-pink-300 w-full py-2">
+      <div className="container mx-auto flex flex-col items-center justify-center text-center">
+        <p>Developed By Wunna Aung</p>
+        <small>
+          Contact me on{" "}
+          <a
+            className="underline text-blue-700 font-semibold"
+            href="https://www.linkedin.com/in/wunna-aung-256116227/"
+          >
+            LinkedIn
+          </a>
+        </small>
+      </div>
+    </footer>
   );
 };
 

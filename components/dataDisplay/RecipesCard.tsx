@@ -22,33 +22,37 @@ const RecipesCard = ({ img, name, type, slug }: RecipesCardProps) => {
   };
 
   return (
-    <Card
-      hoverable
-      className="w-full p-2 max-h-[280px] md:max-h-[350px]"
-      cover={
-        <div
-          style={{ position: "relative", width: "100%", paddingTop: "56.25%" }}
-        >
-          <Image
-            src={imageSrc || DefaultImg.src}
-            alt="recipe-img"
-            layout="fill"
-            objectFit="cover"
-            onError={handleImageError}
-          />
-        </div>
-      }
-    >
-      <Meta
-        title={name}
-        description={type === "002" ? "သက်သက်လွတ်" : "အသားစား"}
-      />
-      <Link className="" href={`/instructions/${slug}`}>
+    <Link className="" href={`/instructions/${slug}`}>
+      <Card
+        hoverable
+        className="p-2"
+        cover={
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              paddingTop: "56.25%",
+            }}
+          >
+            <Image
+              src={imageSrc || DefaultImg.src}
+              alt="recipe-img"
+              layout="fill"
+              objectFit="cover"
+              onError={handleImageError}
+            />
+          </div>
+        }
+      >
+        <Meta
+          title={name}
+          description={type === "002" ? "သက်သက်လွတ်" : "အသားစား"}
+        />
         <Btn className="bg-pink-500 w-full py-2 rounded-md mt-10 font-bold shadow-lg text-white">
           ချက်စားမယ်
         </Btn>
-      </Link>
-    </Card>
+      </Card>
+    </Link>
   );
 };
 

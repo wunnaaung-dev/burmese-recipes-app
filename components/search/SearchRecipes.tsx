@@ -1,17 +1,15 @@
-'use client'
-import React, { useState } from 'react';
+"use client";
+import { setSearchValue } from "@/features/search/searchSlice";
+import { useAppDispatch } from "@/hooks/hooks";
+import React, { useState } from "react";
 
-interface SearchRecipesProps {
-  onSearch: (query: string) => void;
-}
-
-const SearchRecipes: React.FC<SearchRecipesProps> = ({ onSearch }) => {
-  const [searchQuery, setSearchQuery] = useState<string>('');
+const SearchRecipes: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-    onSearch(query);
+    setSearchQuery(e.target.value);
+    dispatch(setSearchValue(e.target.value));
   };
 
   return (

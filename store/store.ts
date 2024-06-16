@@ -1,15 +1,16 @@
 // store/index.ts
 import { configureStore } from '@reduxjs/toolkit';
-import recipesReducer from '@/features/recipesSlice';
-import { apiSlice } from '@/features/receipes-api-slice';
-
+import { recipesApi } from '@/features/receipes-api-slice';
+import filterReducer from '@/features/filter/filterSlice'
+import searchReducer from '@/features/search/searchSlice'
 const store = configureStore({
   reducer: {
-    recipes: recipesReducer,
-    [apiSlice.reducerPath]: apiSlice.reducer,
+    filters: filterReducer,
+    search: searchReducer,
+    [recipesApi.reducerPath]: recipesApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(apiSlice.middleware),
+    getDefaultMiddleware().concat(recipesApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
